@@ -1,0 +1,45 @@
+services:
+  - type: web
+    name: northorbis-aima
+    runtime: node
+    plan: free
+    buildCommand: corepack enable && corepack prepare pnpm@9.15.9 --activate && pnpm install --frozen-lockfile && pnpm build
+    startCommand: corepack pnpm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 22.12.0
+      - key: NEXT_PUBLIC_SITE_URL
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_SECURE
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: NOTIFICATION_EMAIL_TO
+        sync: false
+      - key: NTFY_TOPIC
+        sync: false
+      - key: NTFY_TOPIC_URL
+        sync: false
+      - key: NTFY_TOKEN
+        sync: false
+      - key: WAHA_API_URL
+        sync: false
+      - key: WAHA_API_KEY
+        sync: false
+      - key: WAHA_SESSION
+        value: default
+      - key: WAHA_TO
+        sync: false
+      - key: LEAD_WEBHOOK_URL
+        sync: false
+      - key: LEAD_WEBHOOK_SECRET
+        sync: false
