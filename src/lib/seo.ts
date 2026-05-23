@@ -17,6 +17,15 @@ export function createMetadata({ title, description, path = "" }: MetadataInput)
     alternates: {
       canonical: url
     },
+    icons: {
+      icon: [
+        { url: "/sitemage/favicon.ico", type: "image/x-icon" },
+        { url: "/favicon.ico", type: "image/x-icon" }
+      ],
+      apple: [
+        { url: "/sitemage/NorthOrbis-removebg-preview.png", type: "image/png" }
+      ]
+    },
     openGraph: {
       title: `${title} | ${site.name}`,
       description,
